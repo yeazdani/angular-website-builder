@@ -1,3 +1,4 @@
+<!-- header section -->
 <header>
   <nav class="navbar navbar-light bg-info">
     <a class="navbar-brand text-light" href="#">
@@ -5,17 +6,92 @@
     </a>
   </nav>
 </header>
+
 <main>
-  <div class="row">
-    <div class="col">
-      <app-create></app-create>
+  <!-- widgets section-->
+  <div class="container-fluid">
+    <div class="bg-light">
+      <div class="row">
+        <div class="col-sm-3 mt-4">
+          <div class="row">
+            <div class="col">
+              <h4 class="text-left">Widgets</h4>
+              <hr>
+              <br>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-8 border-right">
+              <div class="mb-3" [innerHTML]="HTMLObject?.button|safeHTML"></div>
+            </div>
+            <div class="col-sm-4">
+              <button (click)="addContent('btn')" class="btn btn-success">+</button>
+              <span class="mr-2"></span>
+              <button (click)="deleteContent('btn')" class="btn btn-danger">-</button>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-8 border-right">
+              <div class="mb-3" [innerHTML]="HTMLObject?.input|safeHTML"></div>
+            </div>
+            <div class="col-sm-4">
+              <button (click)="addContent('input')" class="btn btn-success">+</button>
+              <span class="mr-2"></span>
+              <button (click)="deleteContent('input')" class="btn btn-danger">-</button>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-8 border-right">
+              <div class="mb-3" [innerHTML]="HTMLObject?.nav|safeHTML"></div>
+            </div>
+            <div class="col-sm-4">
+              <button (click)="addContent('nav')" class="btn btn-success">+</button>
+              <span class="mr-2"></span>
+              <button (click)="deleteContent('nav')" class="btn btn-danger">-</button>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-8 border-right">
+              <div class="mb-3" [innerHTML]="HTMLObject?.alert|safeHTML"></div>
+            </div>
+            <div class="col-sm-4">
+              <button (click)="addContent('alert')" class="btn btn-success">+</button>
+              <span class="mr-2"></span>
+              <button (click)="deleteContent('alert')" class="btn btn-danger">-</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Display board section-->
+        <div class="col-sm-9 mt-4">
+          <div class="row">
+            <div class="col">
+              <h4 class="text-left">Display Board <span class=" ml-4 text-muted">(Drag or move widgets to fix
+                  positions)</span></h4>
+              <hr>
+            </div>
+          </div>
+          <div class="boundary">
+            <button *ngFor="let item of buttons" cdkDragBoundary=".boundary" cdkDrag class="btn btn-primary">
+              Button</button>
+            <div *ngFor="let item of inputs" cdkDragBoundary=".boundary" cdkDrag class="form-group">
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            </div>
+            <nav *ngFor="let item of navs" cdkDragBoundary=".boundary" cdkDrag s class="navbar navbar-light bg-dark">
+              <span class="navbar-brand mb-0 h1 text-white">Navbar</span>
+            </nav>
+            <div *ngFor="let item of alerts" cdkDragBoundary=".boundary" cdkDrag class="alert alert-success"
+              role="alert">
+              A simple success alert—check it out!
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
 </main>
-<!-- <footer>
-  <nav class="navbar navbar-light bg-info">
-    <a class="navbar-brand text-light" href="#">
-      Footer
-    </a>
-  </nav>
-</footer> -->
