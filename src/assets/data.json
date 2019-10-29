@@ -1,0 +1,8 @@
+{
+  "alert": "<div class=\"alert alert-primary\" role=\"alert\">Alert—check it out!</div>",
+  "button": "<button type=\"button\" class=\"btn btn-primary\">Button</button>",
+  "shortDescription": "<p>The Laura Canada Sales Associate provides exemplary customer service to every client, has strong fashion awareness, is knowledgeable about our product and develops long-term relationships with customers.</p>",
+  "input": "<div class=\"form-group\"><input type=\"email\" class=\"form-control\" placeholder=\"Input Field\"></div>",
+  "label": "<label>Email address</label>",
+  "nav": "<ul class=\"nav bg-info\"><li class=\"nav-item\"><a class=\"nav-link text-white\" href=\"#\">Navbar</a></li></ul>"
+}
